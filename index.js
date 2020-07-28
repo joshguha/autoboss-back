@@ -22,6 +22,11 @@ app.use("/users", require("./src/routers/userRouter"));
 app.use("/tasks", require("./src/routers/taskRouter"));
 app.use("/chat", require("./src/routers/chatRouter"));
 
+// Basic homepage
+app.get("/", (req, res) => {
+    res.send("Hello");
+});
+
 // set up mongoose
 mongoose.connect(
     process.env.MONGODB_CONNECTION_STRING,

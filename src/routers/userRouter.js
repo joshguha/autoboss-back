@@ -11,6 +11,7 @@ const { login, logout } = require("../misc/timeTracking");
 
 // Register user
 router.post("/register", async (req, res) => {
+    console.log(req.body);
     try {
         let { email, password, passwordCheck, firstName, lastName } = req.body;
 
