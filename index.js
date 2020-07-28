@@ -41,7 +41,7 @@ mongoose
             console.log("MongoDB connection established");
         }
     )
-    .then(() => console.log("connected to MongoDB"))
+    .then(() => console.log("connected to MongoDB succeeded"))
     .catch(() => console.log("connection to MongoDB failed!"));
 
 // set up socket.io methods
