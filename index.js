@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 
 // set up mongoose
 mongoose.connect(
-    process.env.MONGODB_CONNECTION_STRING,
+    process.env.MONGODB_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
