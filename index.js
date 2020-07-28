@@ -28,18 +28,21 @@ app.get("/", (req, res) => {
 });
 
 // set up mongoose
-mongoose.connect(
-    process.env.MONGODB_URI,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-    },
-    (err) => {
-        if (err) throw err;
-        console.log("MongoDB connection established");
-    }
-);
+mongoose
+    .connect(
+        process.env.MONGODB_URI,
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+        },
+        (err) => {
+            if (err) throw err;
+            console.log("MongoDB connection established");
+        }
+    )
+    .then(() => console.log("connected to MongoDB"))
+    .catch(() => console.log("connection to MongoDB failed!"));
 
 // set up socket.io methods
 useIOMethods(io);
